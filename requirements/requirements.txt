@@ -1,0 +1,16 @@
+django
+djangorestframework
+django-redis
+psycopg2-binary
+celery
+boto3
+watchtower
+gunicorn
+pillow
+python-decouple
+requests
+influxdb-client
+django-notifications-hq
+cerberus
+django-push-notifications
+fcm-django

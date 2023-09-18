@@ -1,0 +1,15 @@
+<form method="post">
+  {%csrf_token%}
+  <input type="hidden" name="action" value="change_status">
+  <input type="hidden" name="set_specimen_status" value="yes">
+
+  <div>
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+  </div>
+
+  {% for object in objects %}
+  <input type="hidden" name="_selected_action" value="{{ object.id }}" />
+  {% endfor %}
+
+</form>

@@ -1,0 +1,31 @@
+{% extends 'admin/base.html' %}
+{% block extrahead %}{{ block.super }}
+{% load static %}
+<style>
+  :root {
+    --primary: hsl(202, 100%, 25%);
+    --secondary: hsl(202, 100%, 25%);
+    --accent: hsl(202, 100%, 25%);
+    --primary-fg: #fff;
+    --header-color: #fff;
+  }
+  #notifications {
+    z-index: 999;
+    padding: 0 1em 1em;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    width: 30%;
+    display: none;
+    position: absolute;
+    top: 10%;
+    right: 50px;
+  }
+  #notifications ul {
+    margin-left: 1em;
+  }
+</style>
+     <!--Other common js for example --->
+<script defer src="{% static 'js/notifications.js' %}"></script>
+
+{% endblock %}

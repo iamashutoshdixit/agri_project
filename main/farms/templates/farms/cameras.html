@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      {% for camera in cameras %}
+      <div style="margin: .5rem; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; background-color: #DFF6FF; padding: 1rem; border-radius: .3rem;">
+        <h4 style="font-family: sans-serif;"><span>{{ camera.channel }}</span> - <span>{{ camera.name }}</span></h4>
+        <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
+        <video width="400" id="my-video" controls class="video-js" data-setup="\{\{\}\}" autoplay>
+          <source
+          src="{{ css_url }}/stream/{{camera.farm.name.lower}}/channel/{{camera.channel}}/hls/live/index.m3u8?token=abcd"
+          type="application/x-mpegURL"/>
+        </video>
+        <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
